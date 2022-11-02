@@ -97,7 +97,7 @@
                 style="width: 100px;height:100px;"></div>
     </div>
     </div>
-
+    <div id="button" type="button" class="btn btn-success" onclick="reset()">New Game</div>
     <script>
         let ids = new Array();
         for (i = 0; i < 25; i++) { ids.push(i); }
@@ -140,6 +140,14 @@
                     h = "Sorry, no help available"
             }
             document.getElementById("help").innerHTML = "Help report " + h
+        }
+        function reset() {
+            chestCount = 0;
+            score = 0
+            treasureLocation = Math.round(Math.random() * (24));//(max-min)-min i.e. (23-0)+0
+            document.getElementById("chests").innerHTML = "Number of chests is " + chestCount;;
+            document.getElementById("score").innerHTML = "Score is " + score;
+
         }
 
 
